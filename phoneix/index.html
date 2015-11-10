@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Care</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css"  href="css/site_style.css">
+    <!-- Slider
+    ================================================== 
+    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+    <!-- Stylesheet
+    ================================================== 
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#tf-home" class="page-scroll">Home</a></li>
+            <li><a href="#tf-facilities" class="page-scroll">Facilities</a></li>
+            <li><a href="#tf-hospitals" class="page-scroll">Hospitals</a></li>
+            <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalLogin">Login</a></li>
+            <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalSingup">Signup</a></li>
+            <!--<li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>-->
+            <li><a href="#tf-contact" class="page-scroll">Contact Us</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Home Page
+    ==========================================-->
+	  <!--Login Modal -->
+  <div class="modal fade" id="myModalLogin" role="dialog">
+    <div class="modal-dialog">
+    
+<!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body" style="background-color: chocolate;">
+		<div class="row">
+          <div class="col-sm-4"><label  style="color:#ffffff;">Username</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Password</label></div><div class="col-sm-8"><input type="password" class="form-control"></div>
+        </div>
+		</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!--Singup Modal -->
+  <div class="modal fade" id="myModalSingup" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Join Us</h4>
+        </div>
+        <div class="modal-body" style="background-color: chocolate;">
+		<div class="row">
+          <div class="col-sm-4"><label  style="color:#ffffff;">Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Email</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Phone</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Password</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>		
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Confirm Password</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>
+		</div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!----------------Home1------------------------->
+    <div id="tf-home" class="text-center">
+        <div class="overlay">
+
+			<div class="content">
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1">
+							<ul class="nav nav-tabs home-nav nav-tabs" role="tablist">
+								<li class="home-top-button-active">
+									<a class="d-btn-transparent home-top-button-a" href="#" aria-controls="home" role="tab" data-toggle="tab">Consult Privately</a>
+								</li>
+								<li class="home-top-button">
+									<a href="#" class="d-btn-transparent" aria-controls="profile" role="tab" data-toggle="tab">Ask<span class="hidden-xs"> a</span> Question</a>
+								</li>
+								<li class="home-top-button">
+									<a style="margin-right: -1px;" href="#" class="d-btn-transparent" aria-controls="messages" role="tab" data-toggle="tab">Book<span class="hidden-xs"> an</span> Appointment</a>
+								</li>
+							</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1">							
+							<h4 style="text-align: left !important;">Welcome to <strong><span class="color">My Care</span></strong><br></h4>
+							<div class="home-search">
+								<div class="form-group">
+									<div class="input-group">
+										<span><input type="text" class="form-control input-lg typeahead a-findOnlyDoc tt-input home-search-input" name="searchSpecility" value="" placeholder="Search by Specialty/Symptom/Doctor/Clinic" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
+										<span class="input-group-btn">
+											<a href="hospitals.html"><button tabindex="1" class="btn btn-lg btn-home-top d-callToAction" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button></a>
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="row angle-down" style="background-color:#D2691E;">
+							<br></br>
+						</div>				
+
+			</div>
+		</div>
+	</div>
+<!------------------------------------------------------>
+  <!----------------Home2------------------------->
+    <div id="tf-home-2" class="text-center hidden">
+        <div class="overlay">
+
+			<div class="content">
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1">
+							<ul class="nav nav-tabs home-nav nav-tabs" role="tablist">
+								<li class="home-top-button-active">
+									<a class="d-btn-transparent home-top-button-a" href="#" aria-controls="home" role="tab" data-toggle="tab">Consult Privately</a>
+								</li>
+								<li class="home-top-button">
+									<a href="#" class="d-btn-transparent" aria-controls="profile" role="tab" data-toggle="tab">Ask<span class="hidden-xs"> a</span> Question</a>
+								</li>
+								<li class="home-top-button">
+									<a style="margin-right: -1px;" href="#" class="d-btn-transparent" aria-controls="messages" role="tab" data-toggle="tab">Book<span class="hidden-xs"> an</span> Appointment</a>
+								</li>
+							</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1">							
+							<h4 style="text-align: left !important;">Welcome to <strong><span class="color">My Care</span></strong><br></h4>
+							<div class="home-search">
+								<div class="form-group">
+									<div class="input-group">
+										<span><input type="text" class="form-control input-lg typeahead a-findOnlyDoc tt-input home-search-input" name="searchSpecility" value="" placeholder="Search by Specialty/Symptom/Doctor/Clinic" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
+										<span class="input-group-btn">
+											<button tabindex="1" class="btn btn-lg btn-home-top d-callToAction" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button>
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="row angle-down" style="background-color:#D2691E;">
+							<br></br>
+						</div>				
+
+			</div>
+		</div>
+	</div>
+<!------------------------------------------------------>
+
+  <!----------------Home3------------------------->
+    <div id="tf-home-3" class="text-center hidden">
+        <div class="overlay">
+
+			<div class="content">
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1">
+							<ul class="nav nav-tabs home-nav nav-tabs" role="tablist">
+								<li class="home-top-button-active">
+									<a class="d-btn-transparent home-top-button-a" href="#" aria-controls="home" role="tab" data-toggle="tab">Consult Privately</a>
+								</li>
+								<li class="home-top-button">
+									<a href="#" class="d-btn-transparent" aria-controls="profile" role="tab" data-toggle="tab">Ask<span class="hidden-xs"> a</span> Question</a>
+								</li>
+								<li class="home-top-button">
+									<a style="margin-right: -1px;" href="#" class="d-btn-transparent" aria-controls="messages" role="tab" data-toggle="tab">Book<span class="hidden-xs"> an</span> Appointment</a>
+								</li>
+							</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1">							
+							<h4 style="text-align: left !important;">Welcome to <strong><span class="color">My Care</span></strong><br></h4>
+							<div class="home-search">
+								<div class="form-group">
+									<div class="input-group">
+										<span><input type="text" class="form-control input-lg typeahead a-findOnlyDoc tt-input home-search-input" name="searchSpecility" value="" placeholder="Search by Specialty/Symptom/Doctor/Clinic" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
+										<span class="input-group-btn">
+											<button tabindex="1" class="btn btn-lg btn-home-top d-callToAction" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button>
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="row angle-down" style="background-color:#D2691E;">
+							<br></br>
+						</div>				
+
+			</div>
+		</div>
+	</div>
+<!------------------------------------------------------>
+    <!-- About Us Page
+    ==========================================
+    <div id="tf-about">
+        <div class="container">
+			<div class="row">
+				<div class="col-sm-2 col-sm-offset-1"></div>
+			</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/02.jpg" class="img-responsive">
+                </div>
+                <div class="col-md-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <h4>Our Facilities</h4>
+                            <h2></h2>
+                            <hr>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p class="intro" style="word-wrap:normal;">Phoenix Interiors is one the Bangalore’s leading architectural and interior designer provider throughout the city and nearby locations.
+Our role is to inspire the design which touches sole and belief within you.
+We stand for our unique culture to work and design which is reflected in our team, our projects which is demonstrated by our number of clients who experienced the quality of satisfaction, which makes them to use our services again and again over years.
+</p><p class="intro"> Phoenix Interiors is a proud organisation where we have ability to succeed in any sort of challenges we ever face. We have a significant track record in delivering the sustainable quality design to our clients within time. Our Architects are committed towards achieving consistently appreciation for their work and designs.
+Over the past ten years, we have been lucky enough to work with everyone from innovative start-ups to top brands. It’s our extensive knowledge in consumer based marketing what sets us apart.
+Whether we are living small, or living large, living together or living alone, our appetite for making our house a home has never been more apparent.
+</p>
+                        <ul class="about-list">
+                            <!--<li>
+                                <span class="fa fa-dot-circle-o"></span>
+                                <strong>Mission</strong> - <em>We deliver uniqueness and quality</em>
+                            </li>
+                            <li>
+                                <span class="fa fa-dot-circle-o"></span>
+                                <strong>Skills</strong> - <em>Delivering fast and excellent results</em>
+                            </li>
+                            <li>
+                                <span class="fa fa-dot-circle-o"></span>
+                                <strong>Clients</strong> - <em>Our success in this approach is best measured by our
+clients whose opinions we encourage you to seek.</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Page
+    ==========================================-->
+    <div id="tf-facilities" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2><strong>Our facilities</strong></h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+
+                <div id="team" class="owl-carousel owl-theme row">
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>On-line Appointment</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>On-line Consultation</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Ask your doubt</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Hospital Information</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section
+    ==========================================
+    <div id="tf-services" class="text-center">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Take a look at <strong>our facilities</strong></h2>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="clearfix"></div>
+                <small><em></em></small>
+            </div>
+            <div class="space"></div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong> ARCHITECTS</strong></h4>
+                    <p></p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong> INTERIOR DESIGNERS</strong></h4>
+                    <p></p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong> Structural Engineering</strong></h4>
+                    <p></p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong>Electrical Engineering</strong></h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong> HVAC Design</strong></h4>
+                    <p></p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong> LANDSCAP ATCHITECTURE</strong></h4>
+                    <p></p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong> CONSTRUCTION MANAGEMENT</strong></h4>
+                    <p></p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-home"></i>
+                    <h4><strong>PUBLIC HEALTH Engineering</strong></h4>
+                    <p></p>
+                </div>
+            </div>
+		</div>
+    </div>
+
+    <!-- Clients Section
+    ==========================================
+    <div id="tf-clients" class="text-center">
+        <div class="overlay">
+            <div class="container">
+
+                <div class="section-title center">
+                    <h2>Some of <strong>our Clients</strong></h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+                <div id="clients" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <h3>iRobot</h3>
+                    </div>
+					<div class="item">
+                        <h3>MANTRI ESPANA</h3>
+                    </div>
+                    <div class="item">
+                        <h3>AIS</h3>
+                    </div>
+                    <div class="item">
+                        <h3>Meghana Nursing Home</h3>
+                    </div>
+                    <div class="item">
+                        <h3>Ginger Infrastructure</h3>
+                    </div>
+                    <div class="item">
+                        <h3>Sindhi Seva Samithi</h3>
+                    </div>
+                    <div class="item">
+                        <h3>Akash Infrastructure</h3>
+                    </div>
+                    <div class="item">
+                        <h3>Bhoomika Constructions</h3>
+                    </div>
+				</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section
+    ==========================================-->
+    <div id="tf-hospitals">
+        <div class="container"> <!-- Container -->
+            <div class="section-title text-center center">
+                <h2><strong>Hospital Near to you</strong></h2>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="clearfix"></div>
+                <small><em></em></small>
+            </div>
+            <div class="categories">
+                
+                <ul class="cat">
+                    <li class="pull-left"><h4>Filter by Type:</h4></li>
+                    <li class="pull-right">
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active">All</a></li>
+                            <li><a href="#" data-filter=".web">General Physician</a></li>
+                            <li><a href="#" data-filter=".photography">Nero</a></li>
+                            <li><a href="#" data-filter=".app" >Heart</a></li>
+                            <li><a href="#" data-filter=".branding" >Orthopaedic</a></li>
+						</ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="lightbox" class="row">
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 app">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>School</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Sagar</h4>
+                                    <small>Hospital</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section
+    ==========================================
+    <div id="tf-testimonials" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2><strong>Our clients’</strong> testimonials</h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="testimonial" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <h5>Very Good Service</h5>
+                            </div>
+
+                            <div class="item">
+								<h5>Very Good Service</h5>
+                            </div>
+
+                            <div class="item">
+								<h5>Very Good Service</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section
+    ==========================================-->
+    <div id="tf-contact" class="text-center">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="section-title center">
+                        <h2>Feel free to <strong>Ask your question</strong></h2>
+                        <div class="line">
+                            <hr>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Name</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Email</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Phone</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                                </div>
+                            </div>
+                        </div>						
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">You are looking for</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav id="footer">
+        <div class="container">
+            <div class="pull-left fnav">
+                <p></a></p>
+            </div>
+            <div class="pull-right fnav">
+                <ul class="footer-social">
+                    <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+
+    <script src="js/owl.carousel.js"></script>
+
+    <!-- Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>
