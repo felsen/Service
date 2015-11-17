@@ -1,0 +1,249 @@
+from django.db import models
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes import generic
+
+class BaseInfo(models.Model):
+    created_on = models.DateTimeField(auto_now_add = True)
+    modified_on = models.DateTimeField(auto_now = True)
+    active = models.IntegerField(default = 2, blank = True, null = True)	
+
+    class Meta:
+	abstract = True
+
+class Country(BaseInfo):
+    name = models.CharField(max_length = 10, blank = True)
+    parent = models.ForeignKey(self, blank = True, null = True)
+    level = models.IntegerField(default = 0, blank = True, null = True)
+
+    def __unicode__(self):
+	return "%s"%(self.name)	
+
+class SocialContact(BaseInfo):
+    google_plus = models.URLField(max_length = 250, blank = True, null = True)
+    facebook = models.URLField(max_length = 250, blank = True, null = True)
+    linked_in = models.URLField(max_length = 250, blank = True, null = True)
+    twitter = models.URLField(max_length = 250, blank = True, null = True)
+    instagram = models.URLField(max_length = 250, blank = True, null = True)
+    skype = models.CharField(max_length = 50, blank = True)
+
+    def __unicode__(self):
+        return "%s"%(self.address.permanent_addr)
+
+class Address(BaseInfo):
+    permanent_addr = models.TextField(max_length = 250, blank = True)
+    residential_addr = models.TextField(max_length = 250, blank = True, null = True)
+    country = models.ForeignKey(Country, blank = True, null = True)
+    state = models.ForeignKey(Country, blank = True, null = True)
+    city = models.ForeignKey(Country, blank = True, null = True)	
+    zip_code = models.IntegerField(blank = True, null = True)
+    primary_mobile_no = models.IntegerField(blank = True, null = True)
+    secondary_mobile_no	= models.IntegerField(blank = True, null = True)
+    primary_office_no = models.IntegerField(blank = True, null = True)
+    secondary_office_no = models.IntegerField(blank = True, null = True)
+    primary_landline_no	= models.IntegerField(blank = True, null = True)
+    secondary_landline_no = models.IntegerField(blank = True, null = True)
+    primary_email = models.EmailField(blank = True, null = True)
+    secondary_email = models.EmailField(blank = True, null = True)
+    social_info = models.ForeignKey(blank = True, null = True)
+    content_type = models.ForeignKey(ContentType,null=True,blank=True,)
+    object_id = models.PositiveIntegerField(null=True,)
+    content_object = generic.GenericForeignKey('content_type', 'object_id')
+    
+    def __unicode__(self):
+	return "%s"%(self.permanent_addr)
+
+class Images(BaseInfo):
+    name = models.CharField(max_length = 40, blank = True)
+    description = models.TextField(max_length = 250, blank = True, null = True)
+    images = models.FileField()
+    url = models.URLField(max_length = 250)	
+
+    def __unicode__(self):
+	return "%s"%(self.name)
+
+class Attachments(BaseInfo):
+    name = models.CharField(max_length = 40, blank = True)
+    description = models.TextField(max_length = 250, blank = True, null = True)
+    attachments = models.FileField()
+    url = models.URLField(max_length = 250)
+
+    def __unicode__(self):
+        return "%s"%(self.name)
+
+class Commends(BaseInfo):
+    user = models.ForeignKey(User,blank=True, null=True, related_name="%(class)s_comments")
+    user_name = models.CharField(max_length=50, blank=True)
+    user_email = models.EmailField(max_length=254,blank=True)
+    user_url = models.URLField(blank=True)
+    comment = models.TextField(max_length=COMMENT_MAX_LENGTH)
+    submit_date = models.DateTimeField(default=None)
+    ip_address = models.GenericIPAddressField(unpack_ipv4=True, blank=True, null=True)
+    is_public = models.BooleanField(default=True)
+    is_removed = models.BooleanField(default=False)
+    latitude = models.CharField(max_length = 30, blank = True, null = True)
+    longitude = models.CharField(max_length = 30, blank = True, null = True)
+    content_type = models.ForeignKey(ContentType,null=True,blank=True,)
+    object_id = models.PositiveIntegerField(null=True,)
+    content_object = generic.GenericForeignKey('content_type', 'object_id')
+
+    def __unicode__(self):
+	return "%s"%(self.user_name)
+
+class Departments(BaseInfo):
+    title = models.CharField(max_length = 40, blank = True)
+    description = models.TextField(max_length = 750, blank = True, null = True, help_line = "About Departments")
+    service = models.TextField(max_length = 750. blank = True, null = True)
+    ramarks = models.TextField(max_length = 750. blank = True, null = True)
+    images = models.ForeignKey(Images, blank = True, null = True)
+    attachments = models.FireighKey(Attachments, blank = True, null = True)    	
+    website = models.URLField(blank = True)
+
+    def __unicode__(self):
+	return "%s"%(self.title)
+
+class HospitalInfo(BaseInfo):
+    hospital_name = models.CharField(max_length = 40, blank = True)
+    hospital_description = models.TextField(max_length = 750, blank = True, null = True)
+    no_of_doctors = models.CharField(max_length = 20, blank = True, null = True)	
+    remarks = models.TextField(max_length = 250, blank = True, null = True)
+
+    def __unicode__(self):
+	return "%s"%(self.hospital_name)
+
+QUALFIC_CHOICES = (
+			(0, None),
+			(1, "SSLC"),
+			(2, "HSC"),
+			(3, "Degree_1"),
+			(4, "Degree_2"),
+			(5, "PG_1"),
+			(6, "PG_2"),
+			(7, "Integrated 5 year PG Degree"),
+			(8, "M.Phil"),
+			(9, "Ph.D")	
+		)
+
+MEDIUM_CHOICES = (
+			(0, None),
+			(1, "State Board"),
+			(2, "Metric Board"),
+			(3, "CBSE"),
+			(4, "ICBSE")	
+		)
+
+class Qualification(BaseInfo):
+    qualification = models.IntegerField(choices = QUALFIC_CHOICES, default = 0, blank = True, null = True)	
+    medium_of_instruction = models.IntegerField(choices = MEDIUM_CHOICES, default = 0, blank = True, null = True)
+    year_of_passing = models.CharField(max_length = 50, blank = True, null = True)
+    institution = models.TextField(max_length = 250, blank = True, null = True)
+    certification_no = models.CharField(max_length = 100, blank = True, null = True)	
+
+    def __unicode__(self):
+	return "%s"%(self.year_of_passing)
+
+class EducationQualification(BaseInfo):
+    qualification = models.ForeignKey(Qualification, blnak = True)
+
+    def __unicode__(self):
+	return "%s"%(self.qualification.year_of_passing)
+
+class MedicalCouncilInfo(BaseInfo):
+   registration_no = models.CharField(max_length = 50, blank = True)
+   forename = models.CharField(max_length = 50, blank = True)
+   surname = models.CharField(max_length = 50, blank = True)
+
+   def __unicode__(self):
+        return "%s"%(self.registration_no)
+
+
+GENDER_CHOICE = (
+			(0, None),
+			(1, "Male"),
+			(2, "Female")	
+		)
+
+class Registration(BaseInfo):
+    user = models.ForeignKey(User, blank = True, null = True)
+    date_of_birth = models.DateTimeField(blank = True, null = True)
+    gender = models.ChoiceField(choices = GENDER_CHOICES, default = 0)
+    email = models.EmailField(blank = True, null = True)
+    mobile = models.EmailField(blank = True, null = True)
+    user_image = models.ImageField()
+    		
+    def __unicode__(self):
+	return "%s"%(self.user.username)
+
+class ExperienceInfo(BaseInfo):
+    hospital_info = models.ForeignKey(HospitalInfo, blank = True, null = True)
+    description = models.TextField(max_length = 250, blank = True, null = True)
+    remarks = models.TextField(max_length = 250, blank = True, null = True)
+    year_of_experience = models.CharField(max_length = 10, blank = True, null = True)
+
+    def __unicode__(self):
+	return "%s"%(self.hospital_name)	
+
+
+USER_CHOICES = (
+			(0, None),
+			(1, "Doctors"),
+			(2, "Normal User")
+		)
+
+class UserProfile(BaseInfo):
+    user = models.ForeignKey(User, blank = True, null = True)
+    user_choices = models.IntegerField(choices = USER_CHOICES, blank = True, null = True)	
+    departments = models.ForeignKey(Departments, related_name="%(class)s_related", blank = True, null = True)
+    edu_qualification = models.ForeignKey(EducationQualification, related_name="%(class)s_related", blank = True, null = True)	
+    medical_council_info = models.ForeginKey(MedicalCouncilInfo, blank = True, null = True, related_name = "%(class)s_related") 
+    exp_info = models.ForeignKey(ExperienceInfo, blank = True, null = True)
+    hospital_info = models.ForeignKey(HospitalInfo, blank = True, null = True)
+
+    def __unicode__(self):
+	return "%s"%(self.user.username)
+
+LABEL_CHOICE = (
+			(0, None),
+			(1, "Personal")
+		)
+
+APPOIN_STATUS = (
+			(0, None)
+			(1, "Requested"),
+			(2, "Pending"),
+			(3, "Approved"),
+			(4, "Calcelled"),
+		)
+
+class AppointmentInfo(BaseInfo):
+    subject = models.CharField(max_length = 50, blank = True)
+    description = models.TextField(max_length = 250, blank = True, null = True)
+    requested_user = models.ForeignKey(User, blank = True, null = True, related_name = "%(class)s_related")
+    doctor = models.ForeignKey(User, blank = True, null = True, related_name = "%(class)s_related")	
+    appointment_date = models.DateTimeField(blank = True, null = True)
+    from_time = models.TimeField()
+    to_time = models.TiemField()
+    department = models.ForeignKey(Departments, blank = True, null = True)
+    appoinment_label = models.IntegerField(choices = LABEL_CHOICES, default = 0)
+    appoinment_status = models.IntegerField(choices = APPOIN_STATUS, default = 0)
+
+    def __unicode__(self):
+	return "%s"%(self.user.username)	
+
+RATING_CHOICES = (
+			(0, None)
+			(1, "Excellent"),
+			(2, "Good"),
+			(3, "Bad")	
+		)
+
+class ClientRating(BaseInfo):
+    requested_client = models.ForeignKey(AppointmentInfo, blank = True, null = True)
+    rating = models.CharField(max_length = 10, blank = True)
+    rating_choices = models.IntegerField(choices = RATING_CHOICES, default = 0)
+    remarks = models.TextField(max_length = 250, blank = True, null = True)
+
+    def __unicode__(self):
+	return "%s"%(self.requested_client.subject)
+
+
+
