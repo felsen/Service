@@ -1,0 +1,4 @@
+# Software Requirements:
+
+Python 2.7.9
+Django 1.8.5 >> pip install Django==1.8.5

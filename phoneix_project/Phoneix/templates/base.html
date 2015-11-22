@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}My Care{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css"  href="/static/css/site_style.css">
+
+  </head>
+  <body>
+    <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <a href="/"><img src="/static/img/logo2.png" style="width:100px;"></a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/hospitals-list/" class="page-scroll">Hospitals</a></li>
+			<li><a href="/clinics-list/" class="page-scroll">Clinics</a></li>
+			<li><a href="/dglabs-list/" class="page-scroll">Diagnostic Lab</a></li>
+			<li><a href="/pharmacy-list/" class="page-scroll">Pharmacy</a></li>
+            <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalLogin">Login</a></li>
+            <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalSingup">Signup</a></li>
+            <!--<li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>-->
+            <li><a href="/contact-page/" class="page-scroll">Contact Us</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Home Page
+    ==========================================-->
+	  <!--Login Modal -->
+  <div class="modal fade" id="myModalLogin" role="dialog">
+    <div class="modal-dialog">
+    
+<!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body" style="background-color: chocolate;">
+		<div class="row">
+          <div class="col-sm-4"><label  style="color:#ffffff;">Username</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Password</label></div><div class="col-sm-8"><input type="password" class="form-control"></div>
+        </div>
+		</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!--Singup Modal -->
+  <div class="modal fade" id="myModalSingup" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Join Us</h4>
+        </div>
+        <div class="modal-body" style="background-color: chocolate;">
+		<div class="row">
+          <div class="col-sm-4"><label  style="color:#ffffff;">Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Email</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Phone</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Password</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>		
+		<div class="row">
+		  <div class="col-sm-4"><label  style="color:#ffffff;">Confirm Password</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+        </div>
+		</div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+{% block midpart %}
+
+{% endblock %}
+
+
+
+    {% block contact %}
+
+        {% include 'contact_form.html' %}
+
+    {% endblock %}
+
+    <nav id="footer">
+        <div class="container">
+            {% block footer %}
+            <div class="pull-left fnav">
+                <p></a></p>
+            </div>
+            <div class="pull-right fnav">
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            {% endblock %}
+            
+        </div>
+    </nav>
+
+
+    <script type="text/javascript" src="/static/js/jquery.1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.isotope.js"></script>
+
+    <script src="/static/js/owl.carousel.js"></script>
+
+    <!-- Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="/static/js/main.js"></script>
+
+  </body>
+</html>
