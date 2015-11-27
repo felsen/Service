@@ -36,8 +36,10 @@ urlpatterns = [
     url(r'^dglabs-list/$', DgLabsPageView.as_view(), name = 'dglabspage'),
     url(r'^pharmacy-list/$', PharmacyPageview.as_view(), name = 'pharmacy-page'),
     url(r'^contact-page/$', ContactPageView.as_view(), name = 'contact-page'),
-
     url(r'^hospital-page/$', HospitalPageView.as_view(), name = 'hospital-page'),
+
+    url(r'^registration/$', 'userprofile.views.registration', name = 'registration'),
+    url(r'^login/$', 'userprofile.views.login', name = 'login'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
