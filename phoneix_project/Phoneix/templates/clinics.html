@@ -1,33 +1,14 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %} Clinics {% endblock %}
+{% block title %}Clinics{% endblock %}
 
 {% block midpart %}
   <!----------------Home1------------------------->
-    <div id="tf-home" class="text-center">
+    <div id="tf" class="text-center">
         <div class="overlay">
 
-			<div class="content_in">
-						<div class="row">
-							<div class="col-sm-2 col-sm-offset-1">
-										<span><input type="text" class="form-control" name="searchSpecility" value="" placeholder="Search by Specialty/Symptom/Doctor/Clinic" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
-							</div>
-							<div class="col-sm-2">
-										<span><input type="text" class="form-control" name="searchSpecility" value="" placeholder="Select location location" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
-							</div>
-							<div class="col-sm-2">
-										<span><input type="text" class="form-control" name="searchSpecility" value="" placeholder="Select hospital" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
-							</div>
-							<div class="col-sm-1">
-										<span class="input-group-btn">
-											<a href="hospital.html"><button tabindex="1" class="btn btn-home-top" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button></a>
-										</span>
-							
-							</div>
-						</div>
-						<div class="row angle-down-in" style="background-color:#D2691E;">
-							<br>
-						</div>				
+			<div class="content_in" id="map">
+				
 
 			</div>
 		</div>
@@ -39,60 +20,100 @@
     <div id="tf-hospitals-in">
         <div class="container"> <!-- Container -->
             <div class="categories">
-                
 
                 <div class="clearfix"></div>
             </div>
+			<div class="col-sm-3">
+							<div class="col-sm-12">
+								<div>
+									<div class="inner-addon left-addon">
+										<h5>Modify Search</h5>
 
+									</div>
+									</div>
+							</div>			
+							<div class="col-sm-12">
+								<div>
+									<div class="inner-addon left-addon">
+										<i class="fa fa-search"></i>
+										<input type="text" class="form-control" placeholder="Speciality/Department" name="srch-term" id="keyword_search"  style="border-radius:20px;">
+
+									</div><br>			
+									</div>
+							</div>
+							<div class="col-sm-12">
+								<div>
+									<div class="inner-addon left-addon">
+										<i class="fa fa-search"></i>
+										<input type="text" class="form-control" placeholder="Location" name="srch-term" id="location_search"  style="border-radius:20px;">
+
+									</div><br>			
+									</div>
+							</div>
+							<div class="col-sm-12">
+								<div>
+									<div class="inner-addon left-addon">
+										<i class="fa fa-search"></i>
+										<input type="text" class="form-control" placeholder="Keyword/Clinics/Hospitals/Lab/Pharmacy" name="srch-term" id="speciality_search"  style="border-radius:20px;">
+
+									</div><br>	
+									</div>
+							</div>
+							<div class="col-sm-6">
+										<span class="input-group-btn">
+											<a href="hospitals.html"><button tabindex="1" class="btn btn-home-top" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button></a>
+										</span>
+							
+							</div>
+			
+			</div>
+			<div class="col-sm-9">
             <div id="lightbox" class="row">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Clinic Name</th>
-							<th>City</th>
-							<th>Area</th>
-							<th>Phone Number</th>
-							<th>Book</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th><img src="/static/img/portfolio/p3.jpg" class="img-responsive image-list" alt="...">Hospital Name</th>
-							<th>Bangalore</th>
-							<th>JP Nagar</th>
-							<th>8899527423</th>
-							<th><a href="hospital.html"><button tabindex="1" class="btn btn-home-top" type="button">View</button></a></th>
-						</tr>
-						<tr>
-							<th><img src="/static/img/portfolio/p3.jpg" class="img-responsive image-list" alt="...">Hospital Name</th>
-							<th>Bangalore</th>
-							<th>JP Nagar</th>
-							<th>8899527423</th>
-							<th><a href="hospital.html"><button tabindex="1" class="btn btn-home-top" type="button">View</button></a></th>
-						</tr>
-						<tr>
-							<th><img src="/static/img/portfolio/p3.jpg" class="img-responsive image-list" alt="...">Hospital Name</th>
-							<th>Bangalore</th>
-							<th>JP Nagar</th>
-							<th>8899527423</th>
-							<th><a href="hospital.html"><button tabindex="1" class="btn btn-home-top" type="button">View</button></a></th>
-						</tr>
-						<tr>
-							<th><img src="/static/img/portfolio/p3.jpg" class="img-responsive image-list" alt="...">Hospital Name</th>
-							<th>Bangalore</th>
-							<th>JP Nagar</th>
-							<th>8899527423</th>
-							<th><a href="hospital.html"><button tabindex="1" class="btn btn-home-top" type="button">View</button></a></th>
-						</tr>						
-					</tbody>
-				</table>
 
+				    <div class="col-sm-12 portfolio-item">
+                        <div class="hover-bg">
+                            <a href="hospital.html">
 
+								<h4 class="f_name_heading">Sagar Hospital</h4>
+								<h6 class="f_name_heading_text">258/A, Hosur Road, Bommasandra Industrial Area, Anekal Taluk, Bangalore - 560099</h6>
+								<h6 style="color:hospital.html000000;"><i class="fa fa-phone"></i>  080 7122 2222</h6>
+                            </a>
+                        </div>
+                    </div>
+				    <div class="col-sm-12 portfolio-item">
+                        <div class="hover-bg">
+                            <a href="hospital.html">
 
-            </div>
+								<h4 class="f_name_heading">Sagar Hospital</h4>
+								<h6 class="f_name_heading_text">258/A, Hosur Road, Bommasandra Industrial Area, Anekal Taluk, Bangalore - 560099</h6>
+								<h6 style="color:hospital.html000000;"><i class="fa fa-phone"></i>  080 7122 2222</h6>
+                            </a>
+                        </div>
+                    </div>
+				    <div class="col-sm-12 portfolio-item">
+                        <div class="hover-bg">
+                            <a href="hospital.html">
+
+								<h4 class="f_name_heading">Sagar Hospital</h4>
+								<h6 class="f_name_heading_text">258/A, Hosur Road, Bommasandra Industrial Area, Anekal Taluk, Bangalore - 560099</h6>
+								<h6 style="color:hospital.html000000;"><i class="fa fa-phone"></i>  080 7122 2222</h6>
+                            </a>
+                        </div>
+                    </div>
+				    <div class="col-sm-12 portfolio-item">
+                        <div class="hover-bg">
+                            <a href="hospital.html">
+
+								<h4 class="f_name_heading">Sagar Hospital</h4>
+								<h6 class="f_name_heading_text">258/A, Hosur Road, Bommasandra Industrial Area, Anekal Taluk, Bangalore - 560099</h6>
+								<h6 style="color:hospital.html000000;"><i class="fa fa-phone"></i>  080 7122 2222</h6>
+                            </a>
+                        </div>
+                    </div>
+				</div>
+			</div>
         </div>
     </div>
 
-{% block contact %} {% endblock %}
-
 {% endblock %}
+

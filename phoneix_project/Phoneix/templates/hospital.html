@@ -1,118 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Care</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css"  href="css/site_style.css">
-	<style>
-		td, th{padding:2px;}
-	</style>
+{% extends "base.html" %}
 
-  </head>
-  <body>
-    <!-- Navigation
-    ==========================================-->
-    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <a href="index.html"><img src="img/logo2.png" style="width:100px;"></a>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="hospitals.html" class="page-scroll">Hospitals</a></li>
-			<li><a href="clinics.html" class="page-scroll">Clinics</a></li>
-			<li><a href="dglabs.html" class="page-scroll">Diagnostic Lab</a></li>
-			<li><a href="pharmacy.html" class="page-scroll">Pharmacy</a></li>
-            <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalLogin">Login</a></li>
-            <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalSingup">Signup</a></li>
-            <!--<li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>-->
-            <li><a href="#tf-contact" class="page-scroll">Contact Us</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+{% block title %}My Care - Hospital Page{% endblock %}
 
 
-  <!-- Home Page
-    ==========================================-->
-	  <!--Login Modal -->
-  <div class="modal fade" id="myModalLogin" role="dialog">
-    <div class="modal-dialog">
-    
-<!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Login</h4>
-        </div>
-        <div class="modal-body" style="background-color: chocolate;">
-		<div class="row">
-          <div class="col-sm-4"><label  style="color:#ffffff;">Username</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
-		</div>
-		<div class="row">
-		  <div class="col-sm-4"><label  style="color:#ffffff;">Password</label></div><div class="col-sm-8"><input type="password" class="form-control"></div>
-        </div>
-		</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-<!--Singup Modal -->
-  <div class="modal fade" id="myModalSingup" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Join Us</h4>
-        </div>
-        <div class="modal-body" style="background-color: chocolate;">
-		<div class="row">
-          <div class="col-sm-4"><label  style="color:#ffffff;">Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
-		</div>
-		<div class="row">
-		  <div class="col-sm-4"><label  style="color:#ffffff;">Email</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
-        </div>
-		<div class="row">
-		  <div class="col-sm-4"><label  style="color:#ffffff;">Phone</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
-        </div>
-		<div class="row">
-		  <div class="col-sm-4"><label  style="color:#ffffff;">Password</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
-        </div>		
-		<div class="row">
-		  <div class="col-sm-4"><label  style="color:#ffffff;">Confirm Password</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
-        </div>
-		</div>
+{% block midpart %}
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
 <!----------------------------->
   <div class="modal fade" id="myModalLoginInfo" role="dialog">
     <div class="modal-dialog">
@@ -129,192 +21,161 @@
     </div>
   </div>
   <!----------------Home1------------------------->
-    <div id="tf-home" class="text-center">
+    <div id="tf-single-hospital" class="text-center">
         <div class="overlay">
+            <div class="clearfix"></div>
 
-			<div class="content_in">
-						<div class="row">
-							<div class="col-sm-2 col-sm-offset-1">
-										<span><input type="text" class="form-control" name="searchSpecility" value="" placeholder="Search by Specialty/Symptom/Doctor/Clinic" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
+			<div class="content">
+				<div class="row">
+					<div class="col-sm-5 col-sm-offset-1">
+
+					</div>
+				</div>
+				<div class="content-single-job_listing-hero-company col-md-7 col-sm-12">
+							<h1 itemprop="name" class="job_listing-title">Cureato Imperial</h1>
+							<h5>22/10, MG Road, Bangalore - 560076</h5>
+				</div>
+				<div class="content-single-job_listing-title-category">
+		
+			
+				</div>
+					
+				<div class="row">
+							<div class="col-sm-7 col-sm-offset-1">							
+
 							</div>
-							<div class="col-sm-2">
-										<span><input type="text" class="form-control" name="searchSpecility" value="" placeholder="Select location location" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
-							</div>
-							<div class="col-sm-2">
-										<span><input type="text" class="form-control" name="searchSpecility" value="" placeholder="Select hospital" tabindex="1" style="" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MyriadPro-Light, Georgia, 'Times new roman', 'Helvetica Neue'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-specializations"></div></span></span>
-							</div>
-							<div class="col-sm-1">
+				</div>
+
+				<div class="col-sm-2 col-sm-offset-9">
 										<span class="input-group-btn">
-											<a href="hospital.html"><button tabindex="1" class="btn btn-home-top" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button></a>
+											<a href="hospitals.html"><button tabindex="1" class="btn btn-home-top" type="button">Submit a Review</button></a>
 										</span>
 							
-							</div>
-						</div>
-						<div class="row angle-down-in" style="background-color:#D2691E;">
-							<br>
-						</div>				
-
+				</div>
 			</div>
+			<div class="row angle-down">
+							<br>
+			</div>				
+
 		</div>
 	</div>
-
+	
+<!------------------------------------------------------>
 <!------------------------------------------------------>
 <!------------------------------------------------------>
     <!-- About Us Page
     ==========================================-->
     <div id="tf-about">
         <div class="container">
-			<div class="row details-menu-div">
-					<div class="col-sm-2 details-menu"><a href="#" class="submenu" id="details_menu">Details</a></div>
-					<div class="col-sm-2 details-menu booking_menu"><a href="#" class="submenu" id="booking_menu">Booking</a></div>
-					<div class="col-sm-2 details-menu question_menu"><a href="#" class="submenu" id="question_menu">Ask a question</a></div>
-			</div>
+			<div class="row angle-down-in-out">
+							<br>
+			</div>							
+			
             <div class="row">
-                <div class="col-md-9">
-				<div class="details_menu_1 details_content" style="display:block;">
-					<div class="row">
-						<img src="img/hospitals/health-room5.PNG" class="img-responsive">
-					</div>
+            <div class="col-md-9">
+			<div class="row">
+					
+					<h4><span class="fa fa-list-alt"></span>  Details</h4>
+			</div>
+			<div class="row angle-down-in">
+							<br>
+			</div>				
+			<div class="row" style="margin-top:1%;">
+					<div class="col-sm-2"><a href="#" class="btn btn-default" id="details_menu" style="color:#FFFFFF; background-color:#6A4A9F;">Overview</a></div>
+					<div class="col-sm-2"><a href="#" class="btn" id="booking_menu" style="color:#000;">Specialities</a></div>
+					<div class="col-sm-2"><a href="#" class="btn submenu" id="booking_menu" style="color:#000;">Book Appointment</a></div>
+					<div class="col-sm-2"><a href="#" class="btn" id="details_menu" style="color:#000;">Second Question</a></div>
+					<div class="col-sm-2"><a href="#" class="btn" id="booking_menu" style="color:#000;">Doctors</a></div>
+					<div class="col-sm-2"><a href="#" class="btn" id="question_menu" style="color:#000;">More</a></div>					
+			</div>
+			<div class="details_menu_1 details_content" style="display:block;">
+					<!--div class="row">
+						<img src="/static/img/hospitals/health-room5.png" class="img-responsive">
+					</div-->
 					<div class="row">
 						<ul class="about-list">
                             <li>
                                 <span class="fa fa-dot-circle-o"></span>
-                                <strong>About_1</strong> - <em>We deliver uniqueness and quality</em>
+                                <em>We have been in the healthcare industry since 1995 and have provide extraordinary service to everyone who entrusts us with their health.</em>
                             </li>
                             <li>
                                 <span class="fa fa-dot-circle-o"></span>
-                                <strong>Ambience</strong> - <em>Delivering fast and excellent results</em>
+                                <em>We have 300 bed and a staff 200 strong deal with all the major specialities</em>
                             </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Doctor</strong> - <em>Our success in this approach is best measured by our
-clients whose opinions we encourage you to seek.</em>
-                            </li>
+
                         </ul>
 					</div>
-				</div>
-				<div class="booking_menu_1 details_content" style="display:none;">
+					<div class="row angle-down-in-in">
+							<br>
+					</div>									
 					<div class="row">
-					<table width="100%" border="0">
-						<tbody>
-							<tr><td colspan="0" height="5px" <="" td=""></td></tr>
-							<tr><td colspan="2">
-								<table border="0" width="660px" align="left">
-									<tbody>
-										<tr>
-											<td class="form_label">
-											</td><td class="form_label"></td>
-											<td colspan="4" align="right"><b>All fields marked with <font color="red"> *</font>are required </b> </td>
-										</tr>
-										<tr>
-											<td class="form_label"></td>
-											<td class="form_label"></td>
-											<td colspan="4" align="right"><b>All fields marked with <font color="red"> #</font>any one of the required </b> </td>
-										</tr>
-										<tr>
-											<td class="form_label" colspan="6" align="left"><b>Patient Particulars</b></td>
-										</tr>
-										<tr>
-											<td width="140px" class="form_label">Name<font color="red"> *</font></td>
-											<td width="10px" class="form_label">:</td>
-											<td width="160px"><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Name" type="text" maxlength="50" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Name" class="textbox"></td>
-											<td width="180px" class="form_label">NRIC/FIN/Birth Cert No. <font color="red"> *</font></td>
-											<td width="10px" class="form_label">:</td>
-											<td width="160px"><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$NRIC" type="text" maxlength="15" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_NRIC" class="textbox"></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td></td>
-											<td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ReqName" style="color:Red;display:none;"> Name is required</span></td>
-											<td></td>
-											<td></td>
-											<td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ReqNRICVal" style="color:Red;display:none;">NRIC/FIN/Birth Cert No. Required</span><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_RegNRICNo" style="color:Red;display:none;"> Special Characters are not allowed</span></td>
-										</tr>
-										<tr>
-											<td colspan="2" height="10px" <="" td=""></td>
-										</tr>
-										<tr>
-											<td class="form_label" align="left" colspan="6"><b>You may contact me at</b><font color="red"> #</font></td>
-										</tr>
-										<tr>
-											<td class="form_label">Home Phone</td>
-											<td class="form_label">:</td>
-											<td><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Home" type="text" maxlength="15" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Home" class="textbox" onblur="HomeKeypress()"></td>
-											<td class="form_label">   Office Phone</td><td class="form_label">:</td>
-											<td><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Office" type="text" maxlength="15" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Office" class="textbox" onblur="HomeKeypress()"></td>
-										</tr>
-										<tr>
-											<td class="form_label">   Handphone</td>
-											<td class="form_label">:</td>
-											<td><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Handphone" type="text" maxlength="15" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Handphone" class="textbox" onblur="HomeKeypress()"></td>
-											<td class="form_label">   Email</td>
-											<td>:</td>
-											<td><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Email" type="text" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Email" class="textbox" onblur="HomeKeypress()"></td>
-										</tr>
-										<tr>
-											<td class="form_label"></td>
-											<td class="form_label"></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_RegEmailId" style="color:Red;display:none;"> Invalid Email Format</span></td>
-										</tr>
-										<tr>
-											<td class="form_label" colspan="6" align="left"><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CusPhone" style="color:Red;display:none;"> Please provide at least 1 contact number or email</span></td>
-										</tr>
-									</tbody>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" height="5px" <="" td=""></td>
-						</tr>
-							<tr><td align="left" colspan="2"><b>Appointment Details</b></td><td align="right"></td></tr><tr><td colspan="2"><table border="0" width="660px" align="left"><tbody><tr><td width="425px" class="form_label">Discipline<font color="red"> *</font></td><td width="10px" class="form_label">:</td><td width="225px"><select name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Disciplines" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Disciplines" class="dropdownlist" style="width:250px;">
-					<option value=""></option>
-					<option value="Cardiology">Cardiology</option>
-					<option value="Dental Services">Dental Services</option>
-					<option value="Dermatology">Dermatology</option>
-					<option value="Endocrinology">Endocrinology</option>
-					<option value="ENT">ENT</option>
-					<option value="Health Screening">Health Screening</option>
-					<option value="Gastroenterology">Gastroenterology</option>
-					<option value="General Medicine">General Medicine</option>
-					<option value="General Surgery">General Surgery</option>
-					<option value="Geriatric Medicine">Geriatric Medicine</option>
-					<option value="Infectious Diseases">Infectious Diseases</option>
-					<option value="Neurology">Neurology</option>
-					<option value="Ophthalmology (Eye)">Ophthalmology (Eye)</option>
-					<option value="Orthopaedic Surgery">Orthopaedic Surgery</option>
-					<option value="Psychological Medicine">Psychological Medicine</option>
-					<option value="Rehabilitation Med">Rehabilitation Med</option>
-					<option value="Renal Medicine/Nephrology">Renal Medicine/Nephrology</option>
-					<option value="Respiratory Med">Respiratory Med</option>
-					<option value="Sports Medicine">Sports Medicine</option>
-					<option value="Urology">Urology</option>
-
-				</select></td></tr><tr><td></td><td></td><td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ReqDiscipline" style="color:Red;display:none;"> Disciplines is required</span></td></tr><tr><td class="form_label">Any specific Doctor</td><td class="form_label">:</td><td><textarea name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$SpecificDoctor" rows="3" cols="60" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_SpecificDoctor" class="textbox" style="width:250px;"></textarea><br>Maximum 2000 Characters</td></tr><tr><td class="form_label">Please give us patient's current medical conditions / symptoms</td><td class="form_label">:</td><td><textarea name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Symptoms" rows="5" cols="60" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Symptoms" class="textbox" style="width:250px;"></textarea><br>Maximum 2000 Characters</td></tr><tr><td class="form_label">My preferred dates for appointment are from<font color="red"> *</font><br>Note: Please input the date format 'dd/mm/yyyy' <br>(e.g. 28/12/1975)</td><td class="form_label">:</td><td><table><tbody><tr><td><script language="javascript">g_strDateTimeControlIDs["FromCalender"] = "ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_FromCalender_FromCalenderDate";</script>
-				<table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-				<td class="ms-dtinput">
-				<label for="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_FromCalender_FromCalenderDate" style="display:none"> Date</label>
-				<input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$FromCalender$FromCalenderDate" type="text" maxlength="45" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_FromCalender_FromCalenderDate" class="DateControlformfield" autopostback="0"></td>
-				</tr></tbody></table>
-				</td><td align="center" class="form_label">to </td><td><script language="javascript">g_strDateTimeControlIDs["ToCalender"] = "ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ToCalender_ToCalenderDate";</script>
-				<table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-				<td class="ms-dtinput">
-				<label for="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ToCalender_ToCalenderDate" style="display:none"> Date</label>
-				<input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$ToCalender$ToCalenderDate" type="text" maxlength="45" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ToCalender_ToCalenderDate" class="DateControlformfield" autopostback="0"></td>
-				</tr></tbody></table>
-				</td></tr><tr><td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ReqFromDate" style="color:Red;display:none;">Date is required</span><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_RegFromDate" style="color:Red;display:none;"> Invalid Date Format</span><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CustomCurrentDateValidater" style="color:Red;display:none;">From date should not be past date</span></td><td></td><td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ReqTodate" style="color:Red;display:none;">Date is required</span><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_RegToDate" style="color:Red;display:none;"> Invalid Date Format</span><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CustomDateValidater" style="color:Red;display:none;">To Date should be greater than From Date</span></td></tr></tbody></table></td></tr><tr><td class="form_label">My preferred time for appointment is<font color="red"> *</font></td><td class="form_label">:</td><td><span onchange="Preferedkeypress()"><input id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Morning" type="checkbox" name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Morning"><label for="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Morning">Morning</label></span><span onchange="Preferedkeypress()"><input id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Afternoon" type="checkbox" name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Afternoon"><label for="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Afternoon">Afternoon</label></span></td></tr><tr><td></td><td></td><td><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CustomPreferredTime" style="color:Red;display:none;"> Please provide your preferred time</span></td></tr><tr><td class="form_label">Remark</td><td class="form_label">:</td><td><textarea name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Remark" rows="3" cols="60" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_Remark" class="textbox" style="width:250px;"></textarea><br>Maximum 2000 Characters</td></tr><tr><td valign="bottom"></td><td valign="bottom"></td><td valign="bottom"><table><tbody><tr><td align="left" valign="bottom"><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$txtCaptcha" type="text" value="CQ2H7" readonly="readonly" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_txtCaptcha" style="font-size:15pt;height:30px;width:200px;background-image:url('http://www.cgh.com.sg/SiteCollectionImages/CaptchaImage_JPG.jpg');text-align:center;border:none;font-weight:bold;font-family:Modern;"></td><td align="left" valign="bottom"><input type="image" name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$ctl00" class="button" src="http://www.cgh.com.sg/SiteCollectionImages/CaptchaRefresh.jpg" style="height:30px;width:30px;border-width:0px;"></td></tr></tbody></table></td></tr><tr><td>Code <font color="red"> *</font></td><td>:</td><td align="left"><input name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$txtInput" type="text" maxlength="5" id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_txtInput"></td></tr><tr><td colspan="6" height="5px" <="" td=""></td></tr><tr><td class="form_label" colspan="6" align="left"></td></tr>
-				<tr><td colspan="6" height="5px" <="" td=""></td></tr>
-				<tr><td></td><td colspan="2" align="left"><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_ReqCaptch" style="color:Red;display:none;"> Code is required</span><span id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CustomCaptchaValidater" style="color:Red;display:none;"> Invalid Code</span></td></tr>
-				<tr><td class="form_label"></td><td class="form_label"></td><td align="left"><input type="submit" name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$ctl01" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$ctl01&quot;, &quot;&quot;, true, &quot;valSummarySubmit&quot;, &quot;&quot;, false, false))" class="button">  <input type="submit" name="ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$ctl02" value="Reset" class="button"><div id="ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_valsumaryAppointment" style="color:Red;display:none;">
-
-				</div></td></tr></tbody></table></td></tr><script type="text/javascript">function ValidateModuleList(source, args) {var chk1 = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Morning');var chk2 = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Afternoon');if (chk1.checked || chk2.checked) {args.IsValid = true;}else {args.IsValid = false;}}function CustomPhoneNo_ClientValidate(source, args) {var Home = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Home');var Office = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Office');var Handphone = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Handphone');var Email = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Email');if (Home.value == '' && Office.value == '' && Handphone.value == '' && Email.value == ''){args.IsValid = false;}else{args.IsValid = true;}}function Preferedkeypress() {var oValcheck = document.getElementById('ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CustomPreferredTime');var chk1 = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Morning');var chk2 = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Afternoon');alert(chk2.checked);alert(chk1.checked);if (chk1.checked || chk2.checked) {ValidatorEnable(oValcheck, false);}else {ValidatorEnable(oValcheck, true);}}function HomeKeypress() {var Home = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Home');var Office = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Office');var Handphone = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Handphone');var Email = document.getElementById('ctl00$ctl00$g_d5f81059_32e3_427d_bf2a_23701c18bdc8$Email');var oValHome = document.getElementById('ctl00_ctl00_g_d5f81059_32e3_427d_bf2a_23701c18bdc8_CusPhone');if (Home.value == '' && Office.value == '' && Handphone.value == '' && Email.value == ''){ValidatorEnable(oValHome, true);}else {ValidatorEnable(oValHome, false);}}</script></tbody></table>
-
+					
+						<h4><span class="fa fa-list-alt"></span> Photo</h4>
 					</div>
-
-				</div>
-				<div class="question_menu_1 details_content" style="display:none;">
+					<div class="row">
+						<img src="/static/img/hospitals/health-room5.png" class="circle-img">
+						<img src="/static/img/hospitals/health-room5.png" class="circle-img">
+						<img src="/static/img/hospitals/health-room5.png" class="circle-img">
+					</div>
+					<div class="row angle-down-in-in">
+							<br>
+					</div>									
+					<div class="row">
+					
+						<h4><span class="fa fa-list-alt"></span> Video</h4>
+					</div>
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/pOllmIZjNuY" frameborder="0" allowfullscreen></iframe>
+					</div>					
+			</div>
+			<div class="booking_menu_1 details_content" style="display:none;">
+							<div class="row">
+								<div class="col-sm-4"><label>Speciality/Department</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Booking Date</label></div>
+								<div class="col-sm-8">
+								 <div class="row">
+									<div class='col-sm-6'>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker1'>
+												<input type='text' class="form-control" />
+												<span class="input-group-addon">
+													<span class="fa fa-calendar"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class="form-group">
+											<div class='input-group date' id='timepicker'>
+												<input type='text' class="form-control" />
+												<span class="input-group-addon">
+													<span class="fa fa-time"></span>
+												</span>
+											</div>
+										</div>
+									</div>									
+								</div>
+							</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Email</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Phone</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Note/Comment</label></div><div class="col-sm-8"><textarea class="form-control"></textarea><br></div>
+							</div>		
+							<div class="row">
+								<div class="col-sm-4"><button class="btn">Submit</button></div>
+							</div>
+			</div>
+			<div class="question_menu_1 details_content" style="display:none;">
 					<div class="row">
 							<div class="row">
 								<div class="col-sm-4"><label>Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
@@ -333,83 +194,19 @@ clients whose opinions we encourage you to seek.</em>
 							</div>
 					</div>
 					
-				</div>
+			</div>
 
 				</div>
 
                 <div class="col-md-3">
                     <div class="about-text">
-                        <div class="section-title">
-                            <h4>Related Hospitals</h4>
-                            <h2></h2>
-                            <hr>
-                            <div class="clearfix"></div>
-                        </div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive">
-							</div>
-							<div class="col-sm-6">
-								<img src="img/med1.jpg" class="img-responsive"><br>
-							</div>
+
+						<div class="row content_in">
+								<div class="" id="map">
+								</div>
 						</div>
 					</div>
+					
                 </div>
             </div>
 
@@ -417,41 +214,7 @@ clients whose opinions we encourage you to seek.</em>
         </div>
     </div>
 
-    <nav id="footer">
-        <div class="container">
-            <div class="pull-left fnav">
-                <p></a></p>
-            </div>
-            <div class="pull-right fnav">
-                <ul class="footer-social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+{% endblock %}
 
 
-    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
-
-    <script src="js/owl.carousel.js"></script>
-
-    <!-- Javascripts
-    ================================================== -->
-    <script type="text/javascript" src="js/main.js"></script>
-	<script>
-	        $('.submenu').click(function() {
-            $('.details_content').hide();
-			var vid = $(this);
-			var vid1 = vid.attr('id');
-			//alert('.'+vid1+'_1');
-			$('.'+vid1+'_1').show();
-			});
-	</script>
-
-  </body>
-</html>

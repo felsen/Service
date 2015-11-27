@@ -13,7 +13,27 @@
     <link rel="stylesheet" type="text/css"  href="/static/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css"  href="/static/css/site_style.css">
-
+	<link href="/static/css/jquery-ui.css" rel="stylesheet">
+	
+	
+	    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	<style>
+		td, th{padding:2px;}
+	</style>
+	
+	
   </head>
   <body>
     <!-- Navigation
@@ -34,18 +54,25 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <a href="/"><img src="/static/img/logo2.png" style="width:100px;"></a>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/hospitals-list/" class="page-scroll">Hospitals</a></li>
+		    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hospitals<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/hospitals-list/">Action</a></li>
+					<li><a href="/hospitals-list/">Another action</a></li>
+				</ul>
+			</li>
 			<li><a href="/clinics-list/" class="page-scroll">Clinics</a></li>
 			<li><a href="/dglabs-list/" class="page-scroll">Diagnostic Lab</a></li>
 			<li><a href="/pharmacy-list/" class="page-scroll">Pharmacy</a></li>
             <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalLogin">Login</a></li>
             <li><a href="#" class="page-scroll"  data-toggle="modal" data-target="#myModalSingup">Signup</a></li>
-            <!--<li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>-->
-            <li><a href="/contact-page/" class="page-scroll">Contact Us</a></li>
+			<li><a href="#" class="btn btn-default page-scroll"  data-toggle="modal" data-target="#myModalSingup" style="background-color:#4DC6F3; color:#ffffff; padding:10px 10px 10px 10px; margin-top:5px;">List Yourself</a></li>
+            <!--<li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
+            <li><a href="#tf-contact" class="page-scroll">Contact Us</a></li>-->
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
-    </nav>
+
+	  </nav>
 
     <!-- Home Page
     ==========================================-->
@@ -59,7 +86,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Login</h4>
         </div>
-        <div class="modal-body" style="background-color: chocolate;">
+        <div class="modal-body" style="background-color:#6A4A9F;">
 		<div class="row">
           <div class="col-sm-4"><label  style="color:#ffffff;">Username</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
 		</div>
@@ -68,7 +95,7 @@
         </div>
 		</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" style="background-color:#6A4A9F; color:#ffffff;" data-dismiss="modal">Submit</button>
         </div>
       </div>
       
@@ -82,9 +109,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Join Us</h4>
+          <h4 class="modal-title">Sign up</h4>
         </div>
-        <div class="modal-body" style="background-color: chocolate;">
+        <div class="modal-body" style="background-color:#6A4A9F;">
 		<div class="row">
           <div class="col-sm-4"><label  style="color:#ffffff;">Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
 		</div>
@@ -103,30 +130,20 @@
 		</div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" style="background-color: chocolate; color:#ffffff;" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" style="background-color:#6A4A9F; color:#ffffff;" data-dismiss="modal">Submit</button>
         </div>
       </div>
       
     </div>
   </div>
 
+  {% block midpart %}
 
+  {% endblock %}
 
-{% block midpart %}
-
-{% endblock %}
-
-
-
-    {% block contact %}
-
-        {% include 'contact_form.html' %}
-
-    {% endblock %}
-
-    <nav id="footer">
+  {% block footer %}
+      <nav id="footer">
         <div class="container">
-            {% block footer %}
             <div class="pull-left fnav">
                 <p></a></p>
             </div>
@@ -138,23 +155,110 @@
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 </ul>
             </div>
-            {% endblock %}
-            
         </div>
     </nav>
+  {% endblock %}
+
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery-ui.js"></script>
+<script>
 
 
+
+
+var availableTags = [
+	"Heart",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+var hospitalTags = [
+"Cherish Infertility Clinic",
+"Eliya Prabha Maternity Centre",
+"Kosmoderma Skin, Hair & Laser Clinic",
+"Whitefield Eye Clinic",
+"Dr Batras",
+"Apollo Clinic",
+"Express Clinics Private Limited",
+"Springleaf Healthcare Pvt Ltd",
+"Pulse Healthcare Pvt Ltd",
+"Dental Health Clinic",
+];
+$( "#keyword_search" ).autocomplete({
+	source: availableTags
+});
+$( "#location_search" ).autocomplete({
+	source: availableTags
+});
+$( "#speciality_search" ).autocomplete({
+	source: hospitalTags
+});
+</script>
     <script type="text/javascript" src="/static/js/jquery.1.11.1.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="/static/js/bootstrap.js"></script>
     <script type="text/javascript" src="/static/js/SmoothScroll.js"></script>
     <script type="text/javascript" src="/static/js/jquery.isotope.js"></script>
-
+<script>
+    $(function() {
+        $(".dropdown").hover(
+            function(){ $(this).addClass('open') },
+            function(){ $(this).removeClass('open') }
+        );
+    });
+</script>
     <script src="/static/js/owl.carousel.js"></script>
 
     <!-- Javascripts
     ================================================== -->
     <script type="text/javascript" src="/static/js/main.js"></script>
-
+    
+           <!--script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+				$('#timepicker').timepicker({
+									showPeriod: true,
+									showLeadingZero: true
+					});
+            });
+			
+        </script-->
+    
+    
+    	<script>
+	        $('.submenu').click(function() {
+            $('.details_content').hide();
+			var vid = $(this);
+			var vid1 = vid.attr('id');
+			//alert('.'+vid1+'_1');
+			$('.'+vid1+'_1').show();
+			});
+	</script>
+    
+    
   </body>
 </html>
+  
+  
+  
+  
+  
+  

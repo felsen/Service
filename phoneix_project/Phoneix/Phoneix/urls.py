@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 
 # local file imports.
 import settings
-from userprofile.views import HomePage, HospitalsPageview, ClinicsPageView, DgLabsPageView, \
-    PharmacyPageview, ContactPageView
+from userprofile.views import HomePage, HospitalsListView, ClinicsPageView, DgLabsPageView, \
+    PharmacyPageview, ContactPageView, HospitalPageView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -31,11 +31,13 @@ urlpatterns = [
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page':'/'}),
 
     url(r'^$', HomePage.as_view(), name = 'home-page'),
-    url(r'^hospitals-list/$', HospitalsPageview.as_view(), name = 'hospitals-page'),
+    url(r'^hospitals-list/$', HospitalsListView.as_view(), name = 'hospitals-list'),
     url(r'^clinics-list/$', ClinicsPageView.as_view(), name = 'clinics-page'),
     url(r'^dglabs-list/$', DgLabsPageView.as_view(), name = 'dglabspage'),
     url(r'^pharmacy-list/$', PharmacyPageview.as_view(), name = 'pharmacy-page'),
     url(r'^contact-page/$', ContactPageView.as_view(), name = 'contact-page'),
+
+    url(r'^hospital-page/$', HospitalPageView.as_view(), name = 'hospital-page'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

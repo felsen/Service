@@ -59,7 +59,7 @@ class Images(BaseInfo):
     url = models.URLField(max_length = 250)	
 
     def __unicode__(self):
-	return "%s"%(self.name)
+	    return "%s"%(self.name)
 
 class Attachments(BaseInfo):
     name = models.CharField(max_length = 40, blank = True)
