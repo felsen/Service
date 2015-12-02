@@ -1,11 +1,30 @@
-from django.shortcuts import render
+# From Django Module Imports:
+from django.shortcuts import render, render_to_response
 from django.views.generic.base import TemplateView
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login as auth_login
+from django.contrib.auth import login as auth_login, authenticate, get_user
 from django.http import HttpResponseRedirect
 from django.views.generic import FormView, View
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+
+# From Current Project Module Imports:
+from userprofile.forms import UserLoginForm
+
+class UserLoginView(FormView):
+
+    template_name = "user_login.html"
+    success_url = "/"
+    form_class = UserLoginForm
+    user_error = "username or password incorrect."
+
+    def form_valid(self, form):
+        user = authenticate(username = self.request.POST.get('username'), password = self.request.POST.get('password'))
+        if user is not None:
+            auth_login(self.request, user)
+            context = super(UserLoginView, self).form_valid(form)
+            context['success'] = True
+            return context
+        return render(self.request, self.template_name, {'form':form, 'user_error':self.user_error})
+
 
 def registration(request):
 
@@ -19,15 +38,29 @@ def registration(request):
     return HttpResponseRedirect('/')
 
 
-def login(request):
+#def login(request):
 
-    if request.method == 'POST':
-        username = request.POST.get('user_name')
-        password = request.POST.get('auth_password')
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            auth_login(request, user)
-    return HttpResponseRedirect('/')
+#    if request.method == 'POST':
+#        username = request.POST.get('user_name')
+#        password = request.POST.get('auth_password')
+#        user = authenticate(username=username, password=password)
+#        if user is not None:
+#            auth_login(request, user)
+#    return HttpResponseRedirect('/')
+
+
+#class UserLoginView(FormView):
+
+#    form_class = UserAuthForm()
+
+#    def form_valid(self, form_class):
+#        auth_login(self.request, form_class.get_user())
+#        return HttpResponseRedirect('/')
+
+#    def form_invalid(self, form_class):
+#        return render_to_response(self.get_context_date(form = form_class))
+
+
 
 class HomePage(TemplateView):
 

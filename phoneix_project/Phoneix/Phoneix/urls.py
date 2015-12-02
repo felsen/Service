@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 # local file imports.
 import settings
 from userprofile.views import HomePage, HospitalsListView, ClinicsPageView, DgLabsPageView, \
-    PharmacyPageview, ContactPageView, HospitalPageView
+    PharmacyPageview, ContactPageView, HospitalPageView, UserLoginView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -39,7 +39,7 @@ urlpatterns = [
     url(r'^hospital-page/$', HospitalPageView.as_view(), name = 'hospital-page'),
 
     url(r'^registration/$', 'userprofile.views.registration', name = 'registration'),
-    url(r'^login/$', 'userprofile.views.login', name = 'login'),
+    url(r'^user-login/$', UserLoginView.as_view(), name = 'user-login'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
