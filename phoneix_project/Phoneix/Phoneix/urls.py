@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 # local file imports.
 import settings
 from userprofile.views import HomePage, HospitalsListView, ClinicsPageView, DgLabsPageView, \
-    PharmacyPageview, ContactPageView, HospitalPageView, UserLoginView
+    PharmacyPageview, ContactPageView, HospitalPageView, UserLoginView, UserRegistrationView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,6 +30,7 @@ urlpatterns = [
     # Logout url accessing django in-built logout functions.
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page':'/'}),
 
+    # User Profile App Urls:
     url(r'^$', HomePage.as_view(), name = 'home-page'),
     url(r'^hospitals-list/$', HospitalsListView.as_view(), name = 'hospitals-list'),
     url(r'^clinics-list/$', ClinicsPageView.as_view(), name = 'clinics-page'),
@@ -37,8 +38,7 @@ urlpatterns = [
     url(r'^pharmacy-list/$', PharmacyPageview.as_view(), name = 'pharmacy-page'),
     url(r'^contact-page/$', ContactPageView.as_view(), name = 'contact-page'),
     url(r'^hospital-page/$', HospitalPageView.as_view(), name = 'hospital-page'),
-
-    url(r'^registration/$', 'userprofile.views.registration', name = 'registration'),
+    url(r'^user-registration/$', UserRegistrationView.as_view(), name = 'user-registration'),
     url(r'^user-login/$', UserLoginView.as_view(), name = 'user-login'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

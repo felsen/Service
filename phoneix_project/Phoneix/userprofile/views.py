@@ -6,8 +6,11 @@ from django.http import HttpResponseRedirect
 from django.views.generic import FormView, View
 from django.contrib.auth.models import User
 
+# From Third Party Package Imports:
+import json
+
 # From Current Project Module Imports:
-from userprofile.forms import UserLoginForm
+from userprofile.forms import UserLoginForm, UserRegisterForm
 
 class UserLoginView(FormView):
 
@@ -17,50 +20,25 @@ class UserLoginView(FormView):
     user_error = "username or password incorrect."
 
     def form_valid(self, form):
-        user = authenticate(username = self.request.POST.get('username'), password = self.request.POST.get('password'))
+        user = authenticate(username=self.request.POST.get('username'), \
+                            password = self.request.POST.get('password'))
         if user is not None:
             auth_login(self.request, user)
-            context = super(UserLoginView, self).form_valid(form)
-            context['success'] = True
-            return context
-        return render(self.request, self.template_name, {'form':form, 'user_error':self.user_error})
+            return super(UserLoginView, self).form_valid(form)
+        return render(self.request, self.template_name, {
+            'form':form, 'user_error':self.user_error
+        })
 
+class UserRegistrationView(FormView):
 
-def registration(request):
+    template_name = "user_register.html"
+    form_class = UserRegisterForm
+    success_url = "/"
 
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
-        user = User.objects.create_user(username = username, email = email, password = password)
-    return HttpResponseRedirect('/')
-
-
-#def login(request):
-
-#    if request.method == 'POST':
-#        username = request.POST.get('user_name')
-#        password = request.POST.get('auth_password')
-#        user = authenticate(username=username, password=password)
-#        if user is not None:
-#            auth_login(request, user)
-#    return HttpResponseRedirect('/')
-
-
-#class UserLoginView(FormView):
-
-#    form_class = UserAuthForm()
-
-#    def form_valid(self, form_class):
-#        auth_login(self.request, form_class.get_user())
-#        return HttpResponseRedirect('/')
-
-#    def form_invalid(self, form_class):
-#        return render_to_response(self.get_context_date(form = form_class))
-
-
+    def form_valid(self, form):
+        User.objects.create_user(username = self.request.POST.get('username'), \
+            email = self.request.POST.get('email'), password = self.request.POST.get('password'))
+        return super(UserRegistrationView, self).form_valid(form)
 
 class HomePage(TemplateView):
 
