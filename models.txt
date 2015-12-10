@@ -244,6 +244,3 @@ class ClientRating(BaseInfo):
 
     def __unicode__(self):
 	return "%s"%(self.requested_client.subject)
-
-
-
