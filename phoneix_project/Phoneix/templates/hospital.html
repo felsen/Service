@@ -5,21 +5,6 @@
 
 {% block midpart %}
 
-<!----------------------------->
-  <div class="modal fade" id="myModalLoginInfo" role="dialog">
-    <div class="modal-dialog">
-    
-<!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="submenu close" data-dismiss="modal" id="booking_menu">&times;</button>
-          <h4 class="modal-title">Please Signin/Singup before booking</h4>
-        </div>
-
-      </div>
-      
-    </div>
-  </div>
   <!----------------Home1------------------------->
     <div id="tf-single-hospital" class="text-center">
         <div class="overlay">
@@ -33,7 +18,7 @@
 				</div>
 				<div class="content-single-job_listing-hero-company col-md-7 col-sm-12">
 							<h1 itemprop="name" class="job_listing-title">Cureato Imperial</h1>
-							<h5>22/10, MG Road, Bangalore - 560076</h5>
+							<h4>22/10, MG Road, Bangalore - 560076</h4>
 				</div>
 				<div class="content-single-job_listing-title-category">
 		
@@ -53,7 +38,7 @@
 							
 				</div>
 			</div>
-			<div class="row angle-down">
+			<div class="row angle-down-in-in">
 							<br>
 			</div>				
 
@@ -65,33 +50,41 @@
 <!------------------------------------------------------>
     <!-- About Us Page
     ==========================================-->
-    <div id="tf-about">
+    <div id="tf-about" style="padding-bottom:6%;">
         <div class="container">
 			<div class="row angle-down-in-out">
 							<br>
 			</div>							
 			
             <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
 			<div class="row">
 					
-					<h4><span class="fa fa-list-alt"></span>  Details</h4>
+					<h4 style="color:#808080;"><span class="fa fa-list-alt" style="color:#808080;"></span>  Details</h4>
 			</div>
 			<div class="row angle-down-in">
 							<br>
 			</div>				
-			<div class="row" style="margin-top:1%;">
-					<div class="col-sm-2"><a href="#" class="btn btn-default" id="details_menu" style="color:#FFFFFF; background-color:#6A4A9F;">Overview</a></div>
-					<div class="col-sm-2"><a href="#" class="btn" id="booking_menu" style="color:#000;">Specialities</a></div>
-					<div class="col-sm-2"><a href="#" class="btn submenu" id="booking_menu" style="color:#000;">Book Appointment</a></div>
-					<div class="col-sm-2"><a href="#" class="btn" id="details_menu" style="color:#000;">Second Question</a></div>
-					<div class="col-sm-2"><a href="#" class="btn" id="booking_menu" style="color:#000;">Doctors</a></div>
-					<div class="col-sm-2"><a href="#" class="btn" id="question_menu" style="color:#000;">More</a></div>					
+			<div class="row" style="margin-top:1%;margin-bottom:2%;">
+				<ul class="nav navbar-nav">
+					<li><a href="#" class="btn submenu active" id="details_menu" style="color:#000;">Overview</a></li>
+					<li><a href="#" class="btn submenu" id="specialities_menu" style="color:#000;">Specialities</a></li>
+					<li><a href="#" class="btn submenu" id="booking_menu" style="color:#000;">Book Appointment</a></li>
+					<li><a href="#" class="btn submenu" id="question_menu" style="color:#000;">Second Opnion</a></li>
+					<li><a href="#" class="btn submenu" id="doctors_menu" style="color:#000;">Doctors</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" id="more_menu" style="color:#000;"><span class="fa fa-list-alt"></span>  More</a>	
+						<ul class="dropdown-menu text-menu">
+							<li><a href="#" class="submenu" id="pricing_menu" style="color:#000;">Pricing</a></li>
+							<li><a href="#" class="submenu" id="international_menu" style="color:#000;" href="">International Patients</a></li>
+						</ul>
+					</li>
+				</ul>
+			<div class="row angle-down-in-in">
+							<br>
+					</div>									
+
 			</div>
 			<div class="details_menu_1 details_content" style="display:block;">
-					<!--div class="row">
-						<img src="/static/img/hospitals/health-room5.png" class="img-responsive">
-					</div-->
 					<div class="row">
 						<ul class="about-list">
                             <li>
@@ -110,22 +103,29 @@
 					</div>									
 					<div class="row">
 					
-						<h4><span class="fa fa-list-alt"></span> Photo</h4>
+						<h4 style="color:#808080;"><span class="fa fa-file-photo-o"></span> Photo</h4>
 					</div>
+					<div class="row angle-down-in-in-out">
+							<br>
+						</div>														
 					<div class="row">
-						<img src="/static/img/hospitals/health-room5.png" class="circle-img">
-						<img src="/static/img/hospitals/health-room5.png" class="circle-img">
-						<img src="/static/img/hospitals/health-room5.png" class="circle-img">
+						<img src="/static/img/hospitals/img-1.jpg" class="circle-img">
+						<img src="/static/img/hospitals/img-2.jpg" class="circle-img">
+						<img src="/static/img/hospitals/img-3.jpg" class="circle-img">
 					</div>
 					<div class="row angle-down-in-in">
 							<br>
 					</div>									
 					<div class="row">
 					
-						<h4><span class="fa fa-list-alt"></span> Video</h4>
+						<h4 style="color:#808080;"><span class="fa fa-film"></span> Video</h4>
 					</div>
+					<div class="row angle-down-in-in-out">
+							<br>
+						</div>														
 					<div class="row">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/pOllmIZjNuY" frameborder="0" allowfullscreen></iframe>
+					    <iframe width="100%" height="315" src="https://www.youtube.com/embed/BeVQ_1uyLWw?feature=oembed" frameborder="0" allowfullscreen="" id=""></iframe>
+						<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/pOllmIZjNuY" frameborder="0" allowfullscreen></iframe>-->
 					</div>					
 			</div>
 			<div class="booking_menu_1 details_content" style="display:none;">
@@ -145,6 +145,7 @@
 												</span>
 											</div>
 										</div>
+										
 									</div>
 									<div class='col-sm-6'>
 										<div class="form-group">
@@ -172,8 +173,20 @@
 								<div class="col-sm-4"><label>Note/Comment</label></div><div class="col-sm-8"><textarea class="form-control"></textarea><br></div>
 							</div>		
 							<div class="row">
-								<div class="col-sm-4"><button class="btn">Submit</button></div>
+								<div class="col-sm-1 col-sm-offset-11"><button class="btn" style="margin-left:-30px;">Submit</button></div>
 							</div>
+			</div>
+			<div class="specialities_menu_1 details_content" style="display:none;">
+					<div class="row">
+						<ul class="about-list">
+                            <li>
+                                <span class="fa fa-dot-circle-o"></span>
+                                <em>Anaesthesiology, Cardio Thoracic and Vascular Surgery,Cardiology,Clinical Nutrition and Dietetics, Critical Care, Dentistry and Maxillo-Facial Surgery, Dermatology, Diabetes and Metabolic disorders, ENT, Emergency Medicine, Endocrinology, Foetal Medicine, Gastroenterology and Hepatology, Gastrointestinal & Hepatobilliary Surgery, General and Laparoscopic Surgery, Haematology, Internal Medicine, Mental Health and Behavioural Sciences, Minimal Access Surgery, Nephrology, Neurology, Obstetrics and Gynaecology, Oncology, Ophthalmology, Orthopaedics and joint replacement, Paediatrics and Neonatology, Physiotherapy and Rehabilitation, Plastic / Cosmetic Surgery, Pulmonology / Respiratory, Medicine, Radiology, Rheumatology, Sports Medicine, Vascular Surgery</em>
+                            </li>
+
+                        </ul>
+					</div>
+					
 			</div>
 			<div class="question_menu_1 details_content" style="display:none;">
 					<div class="row">
@@ -190,29 +203,157 @@
 								<div class="col-sm-4"><label>Question</label></div><div class="col-sm-8"><textarea class="form-control"></textarea><br></div>
 							</div>		
 							<div class="row">
-								<div class="col-sm-4"><button class="btn">Submit</button></div>
+								<div class="col-sm-1 col-sm-offset-10" ><button class="btn">Submit</button></div>
 							</div>
 					</div>
 					
 			</div>
+			<div class="doctors_menu_1 details_content" style="display:none;">
+					<div class="row">
+						<ul class="about-list">
+                            <li>
+                                <span class="fa fa-dot-circle-o"></span>
+                                <em>Anaesthesiology, Cardio Thoracic and Vascular Surgery,Cardiology,Clinical Nutrition and Dietetics, Critical Care, Dentistry and Maxillo-Facial Surgery, Dermatology, Diabetes and Metabolic disorders, ENT, Emergency Medicine, Endocrinology, Foetal Medicine, Gastroenterology and Hepatology, Gastrointestinal & Hepatobilliary Surgery, General and Laparoscopic Surgery, Haematology, Internal Medicine, Mental Health and Behavioural Sciences, Minimal Access Surgery, Nephrology, Neurology, Obstetrics and Gynaecology, Oncology, Ophthalmology, Orthopaedics and joint replacement, Paediatrics and Neonatology, Physiotherapy and Rehabilitation, Plastic / Cosmetic Surgery, Pulmonology / Respiratory, Medicine, Radiology, Rheumatology, Sports Medicine, Vascular Surgery</em>
+                            </li>
 
-				</div>
+                        </ul>
+					</div>
 
-                <div class="col-md-3">
+			</div>		
+			<div class="pricing_menu_1 details_content" style="display:none;">
+					<div class="row">
+						<ul class="about-list">
+                            <li>
+                                <h5>Pricing</h5>
+                            </li>
+
+                        </ul>
+					</div>
+
+			</div>		
+			<div class="international_menu_1 details_content" style="display:none;">
+					<div class="row">
+							<div class="row">
+								<div class="col-sm-4"><label>Name</label></div><div class="col-sm-8"><input type="text" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Email</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Contact Number</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Subject</label></div><div class="col-sm-8"><input type="password" class="form-control"><br></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"><label>Message</label></div><div class="col-sm-8"><textarea class="form-control"></textarea><br></div>
+							</div>		
+							<div class="row">
+								<div class="col-sm-1 col-sm-offset-10" ><button class="btn" style="background-color:#EF519E; color:#ffffff; padding:10px 10px 10px 10px; margin-top:5px;">Send</button></div>
+							</div>
+					</div>
+
+			</div>		
+					
+			</div>
+
+            <div class="col-md-4">
                     <div class="about-text">
 
 						<div class="row content_in">
-								<div class="" id="map">
+								<div id="map"  width="100%">
 								</div>
 						</div>
+						<div class="row angle-down-in-in">
+							<br>
+						</div>									
 					</div>
-					
+                    <div class="about-text">
+
+						<div class="row content_in">
+								<div>No.154/9, Bannerghatta Road, Bangalore - 560076, Opposite IIMB</div>
+							    <div>91-80-66214444, 66214031</div> 
+								<div>http://cureato.com/listing/cureato-imperial/</div>
+						</div>
+						<div class="row angle-down-in-in">
+							<br>
+						</div>									
+					</div>
+					<div class="about-text">
+						<div class="row content_in">
+							<h4 style="color:#808080;"><span class="fa fa-clock-o">  Opening Hours</span></h4>
+							<p>
+								<div class="col-sm-4">Monday</div>
+								<div class="col-sm-8 float-right">
+									<span class="start">12:00 am</span> – <span class="end">8:00 pm</span>
+								</div><br>
+							</p>
+							<p>
+								<div class="col-sm-4">Tuesday</div>
+								<div class="col-sm-8">
+									<span class="start">12:00 am</span> – <span class="end">8:00 pm</span>
+								</div><br>
+							</p>
+							<p>
+								<div class="col-sm-4">Wednesday</div>
+								<div class="col-sm-8">
+									<span class="start">12:00 am</span> – <span class="end">8:00 pm</span>
+								</div><br>
+							</p>
+							<p>
+								<div class="col-sm-4">Thursday</div>
+								<div class="col-sm-8">
+									<span class="start">12:00 am</span> – <span class="end">8:00 pm</span>
+								</div><br>
+							</p>
+							<p>
+								<div class="col-sm-4">Friday</div>
+								<div class="col-sm-8">
+									<span class="start">12:00 am</span> – <span class="end">8:00 pm</span>
+								</div><br>
+							</p>							
+							<p>
+								<div class="col-sm-4">Saturday</div>
+								<div class="col-sm-8">
+									<span class="start">12:00 am</span> – <span class="end">8:00 pm</span>
+								</div><br>
+							</p>							
+						</div>
+						<div class="row angle-down-in-in">
+							<br>
+						</div>															
+					</div>
                 </div>
             </div>
 
+			<div class="row" style="padding-top:15%;">
+			<div class="row angle-down-in-out">
+							<br>
+			</div>							
+				<div class="col-md-9">
+					<h2 style="padding-bottom:4%;"> Cureato is the best way to the best healthcare</h2>
 
+					<div class="cta-description"><p>It just gets better and better</p>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<a href="#" class="btn btn-default page-scroll"  data-toggle="modal" data-target="#myModalLink" style="background-color:#EF519E; color:#ffffff; padding:10px 10px 10px 10px; margin-top:5px;">List Yourself</a>
+					<p><small class="cta-subtext">and get started in minutes</small></p>
+				</div>
+
+			</div>
         </div>
     </div>
+<div class="well">
+  <div id="datetimepicker2" class="input-append">
+    <input data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+</div>
 
 
 {% endblock %}

@@ -2,15 +2,19 @@
 
 
 {% block midpart %}
+
   <!----------------Home1------------------------->
-    <div id="tf-home" class="text-center">
+  
+  <div id="tf-home" class="text-center">
 
 	<div class="overlay">
+					
+			
 			<div class="content">
-						<div class="row" style="margin-top:-40px;">
+						<div class="row">
 							<div class="col-sm-7 col-sm-offset-1">							
 							<h4 style="text-align: left !important;">THE POWER OF ONLINE HEALTHCARE<span class="color"> MADE SIMPLE</span><br></h4>
-							<h4 style="text-align: left !important;">CHOOSE A SERVICE<span class="color"> > </span>  BOOK ONLINE <span class="color"> > </span>  GET THE RIGHT ADVISE AND RATE YOUR CARE</span><br></h4>
+							<h4 style="text-align: left !important;">CHOOSE A SERVICE<span class="color"> > </span>  BOOK ONLINE <span class="color"> > </span>  GET THE RIGHT ADVISE AND RATE YOUR CARE<br></h4>
 							</div>
 						</div>
 						<div class="row">
@@ -20,20 +24,66 @@
 						</div>
 						
 						<div class="row" style="margin-top:40px;">
-							<div class="col-sm-2 col-sm-offset-1">
-								<div>
-									<div class="inner-addon left-addon">
-										<i class="fa fa-search"></i>
-										<input type="text" class="form-control" placeholder="Speciality/Department" name="srch-term" id="keyword_search"  style="border-radius:20px;">
-
-									</div>			
-									</div>
+							<div class="col-sm-3 col-sm-offset-1">
+							<div class="btn-group form_control">
+								<select id='standard' name='standard' class='custom-select  form-control'>
+									<option value='' style="text-align:left !important;">Speciality/Department</option>
+									<option value="/hospitals-list/">24 Hours Emergency Services</option>
+									<option value="/hospitals-list/">Anaesthesiology</option>
+									<option value="/hospitals-list/">Bariatric Surgery</option>
+									<option value="/hospitals-list/">Cardio Thoracic and Vascular Surgery</option>
+									<option value="/hospitals-list/">Cardiology</option>
+									<option value="/hospitals-list/">Clinical Nutrition and Dietetics</option>
+									<option value="/hospitals-list/">Critical Care</option>
+									<option value="/hospitals-list/">Dental</option>
+									<option value="/hospitals-list/">Dentistry and Maxillo-Facial Surgery</option>
+									<option value="/hospitals-list/">Dermatology</option>
+									<option value="/hospitals-list/">Diabetes and Metabolic disorders</option>
+									<option value="/hospitals-list/">ENT</option>
+									<option value="/hospitals-list/">Emergency Medicine</option>
+									<option value="/hospitals-list/">Endocrinology</option>
+									<option value="/hospitals-list/">Foetal Medicine</option>
+									<option value="/hospitals-list/">General Medicine</option>
+									<option value="/hospitals-list/">Gastroenterology and Hepatology</option>
+									<option value="/hospitals-list/">Gastrointestinal & Hepatobilliary Surgery</option>
+									<option value="/hospitals-list/">General and Laparoscopic Surgery</option>
+									<option value="/hospitals-list/">Haematology</option>
+									<option value="/hospitals-list/">ICU</option>
+									<option value="/hospitals-list/">Internal Medicine</option>
+									<option value="/hospitals-list/">IVF & Infertility</option>
+									<option value="/hospitals-list/">Laboratory Services</option>
+									<option value="/hospitals-list/">Mental Health and Behavioural Sciences</option>
+									<option value="/hospitals-list/">Minimal Access Surgery</option>
+									<option value="/hospitals-list/">Nephrology</option>
+									<option value="/hospitals-list/">Neurology</option>
+									<option value="/hospitals-list/">Neuro Sergery</option>
+									<option value="/hospitals-list/">Neonatology</option>
+									<option value="/hospitals-list/">Obstetrics and Gynaecology</option>
+									<option value="/hospitals-list/">Oncology</option>
+									<option value="/hospitals-list/">Ophthalmology</option>
+									<option value="/hospitals-list/">Orthopaedics and Joint Replacement</option>
+									<option value="/hospitals-list/">Organ Transplant</option>
+									<option value="/hospitals-list/">Paediatrics and Neonatology</option>
+									<option value="/hospitals-list/">Physiotherapy and Rehabilitation</option>
+									<option value="/hospitals-list/">Plastic / Cosmetic Surgery</option>
+									<option value="/hospitals-list/">Pulmonology / Respiratory</option>
+									<option value="/hospitals-list/">Psychiatry</option>
+									<option value="/hospitals-list/">Medicine</option>
+									<option value="/hospitals-list/">Radiology</option>
+									<option value="/hospitals-list/">Renal Sciences Rheumatology</option>
+									<option value="/hospitals-list/">Sports Medicine</option>
+									<option value="/hospitals-list/">Transfusion Services (Blood Bank)</option>
+									<option value="/hospitals-list/">Urology</option>
+									<option value="/hospitals-list/">Vascular Surgery</option>
+								</select>
 							</div>
+
+							</div>			
 							<div class="col-sm-2">
 								<div>
 									<div class="inner-addon left-addon">
 										<i class="fa fa-search"></i>
-										<input type="text" class="form-control" placeholder="Location" name="srch-term" id="location_search"  style="border-radius:20px;">
+										<input type="text" class="placepicker form-control" placeholder="Location" name="srch-term" id="location_search"  style="border-radius:5px;border:1px solid #888888;">
 
 									</div>			
 									</div>
@@ -42,14 +92,14 @@
 								<div>
 									<div class="inner-addon left-addon">
 										<i class="fa fa-search"></i>
-										<input type="text" class="form-control" placeholder="Keyword/Clinics/Hospitals/Lab/Pharmacy" name="srch-term" id="speciality_search"  style="border-radius:20px;">
+										<input type="text" class="form-control" placeholder="Keyword/Clinics/Hospitals/Lab/Pharmacy" name="srch-term" id="speciality_search"  style="border-radius:5px;border:1px solid #888888;">
 
 									</div>			
 									</div>
 							</div>
 							<div class="col-sm-1">
 										<span class="input-group-btn">
-											<a href="/hospitals-list/"><button tabindex="1" class="btn btn-home-top" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button></a>
+											<a href="hospitals.html"><button tabindex="1" class="btn btn-home-top" type="button" onclick="ga('send', 'event', 'Ask a Question', 'Consult Privately', 'Search');">Search</button></a>
 										</span>
 							
 							</div>
@@ -59,8 +109,8 @@
 						</div>				
 
 			</div>
-		</div>
 	</div>
+  </div>
 <!------------------------------------------------------>
     <!-- Facilities
     ==========================================-->
@@ -68,15 +118,15 @@
         <div class="">
             <div class="container">
                 <div class="section-title text-center center">
-                    <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 420px;">CureZing Advantages</h3>
+                    <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 38%;background-color: #4DC6F3;color: #FFFFFF;border: 1px solid rgba(136, 136, 136, 0.53);;border-radius: 5px;">CureZing Advantages</h3>
                     <br>
                 </div>
 
-                <div id="team" class="owl-carousel owl-theme row">
-                    <div class="item">
+                <div id="team" class="row" style="padding-top:5%;">
+                    <div class="col-sm-3">
                         <div class="thumbnail">
 							
-							<img src="http://cureato.com/wp-content/uploads/2015/10/icons_healthcare.png"  class="img-circle team-img">
+							<img src="/static/img/icons_healthcare.png"  class="img-circle team-img">
 							<h5>Quick Access</h5>
                             <div class="caption">
                                 <p>Cureato brings various healthcare solutions under one roof which enables easy access and complete medical care</p>
@@ -84,10 +134,10 @@
                         </div>
                     </div>
 
-                    <div class="item">
+                    <div class="col-sm-3">
                         <div class="thumbnail">
 							
-							<img src="http://cureato.com/wp-content/uploads/2015/10/icons_verified.png" class="img-circle team-img">
+							<img src="/static/img/icons_verified.png" class="img-circle team-img">
 							<h5>Credible</h5>
                             <div class="caption">
                                 <p>Verified and credible information about healthcare service providers which helps in making a right decision</p>
@@ -95,10 +145,10 @@
                         </div>
                     </div>
 
-                    <div class="item">
+                    <div class="col-sm-3">
                         <div class="thumbnail">
 							
-							<img src="http://cureato.com/wp-content/uploads/2015/10/icons_appointment.png" class="img-circle team-img">
+							<img src="/static/img/icons_appointment.png" class="img-circle team-img">
 							<h5>E-booking</h5>
                             <div class="caption">
                                 <p>Book appointments online, online medical consultation and host of other e-healthcare services</p>
@@ -106,10 +156,10 @@
                         </div>
                     </div>
 
-                    <div class="item">
+                    <div class="col-sm-3">
                         <div class="thumbnail">
 							
-							<img src="http://cureato.com/wp-content/uploads/2015/10/icons_upload.png" class="img-circle team-img">
+							<img src="/static/img/icons_upload.png" class="img-circle team-img">
 							<h5>Convenience</h5>
                             <div class="caption">
                                 <p>Upload medical documents online from anywhere for a second opinion, saving time and money on consultation</p>
@@ -124,525 +174,57 @@
         </div>
 
     </div>
+    <div id="tf-img" class="text-center" style="padding-bottom:10%;">
+        <div class="">
+            <div class="container">
+                <div class="section-title text-center center">
+                    <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 38%;background-color: #4DC6F3;color: #FFFFFF;border: 1px solid rgba(136, 136, 136, 0.53);;border-radius: 5px;">Healthcare Categories</h3>
+                    <br>
+                </div>
 
+                <div class="row" style="padding-bottom:5%;padding-top:7%;">
+                    <div class="col-sm-8">
+						<div class="col-sm-12">
+						<img src="/static/img/hospitals/img-3.jpg" class="facility-img">
+						<h2 class="job_listing-title facility-img-text">Clinics</h2>
+						</div>
+                     </div>
+
+                    <div class="col-sm-4">
+						<div class="col-sm-12">
+						<img src="/static/img/hospitals/img-1.jpg" class="facility-img" style="">
+							<h2 class="job_listing-title facility-img-text" style="margin-top: -46%;">Labs</h2>
+						</div>
+
+                     </div>
+
+                </div>
+                				
+                <div class="row">
+                    <div class="col-sm-4">
+						<div class="col-sm-12">
+						<img src="/static/img/hospitals/img-3.jpg" class="facility-img">
+						<h2 class="job_listing-title facility-img-text" style="margin-top: -46%;">Hospitals</h2>
+						</div>
+
+                     </div>
+
+                    <div class="col-sm-8">
+							<a href="pharmacy.html">
+							<div class="col-sm-12">
+						<img src="/static/img/hospitals/img-2.jpg" class="facility-img">
+							<h2 class="job_listing-title facility-img-text">Pharmacy</h2>
+							</div>
+							</a>
+                     </div>
+
+                </div>
+			</div>
+			
+        </div>
+
+    </div>
 
 <!------------------------------------------------------>
 
-
-    <!-- Hospitals Section
-    ==========================================-->
-    <div id="tf-hospitals">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 420px;">Featured Hospitals</h3>
-                <br>
-                <div class="clearfix"></div>
-                
-            </div>
-
-
-            <div id="lightbox" class="row">
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Clinics Section
-    ==========================================-->
-    <div id="tf-clinics">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 420px;">Featured Clinics</h3>
-                <br>
-                <div class="clearfix"></div>
-                
-            </div>
-
-            <div id="lightbox" class="row">
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Pharmacy Section
-    ==========================================-->
-    <div id="tf-pharmacy">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 420px;">Featured Labs</h3>
-                <br>
-                <div class="clearfix"></div>
-                
-            </div>
-
-
-            <div id="lightbox" class="row">
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>	
-
-
-    <!-- Pharmacy Section
-    ==========================================-->
-    <div id="tf-pharmacy">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h3 class="col-sm-3 col-sm-offset-5" style="margin-left: 420px;">Featured Pharmacy</h3>
-                <br>
-                <div class="clearfix"></div>
-                
-            </div>
-
-
-            <div id="lightbox" class="row">
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-
-								<h4 class="f_name_heading">Sagar Hospital</h4>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-		<div class="row angle-down" style="background-color:#6A4A9F;margin-top:0;">
-							<br>
-		</div>				
-    </div>	
-
-    <!-- Contact Section
-    ==========================================
-    <div id="tf-contact" class="text-center">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-
-                    <div class="section-title center">
-                        <h2>Feel free to Ask your question</h2>
-                        <div class="line">
-                            <hr>
-                        </div>
-                        <div class="clearfix"></div>
-
-                    </div>
-
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Email</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
-                                </div>
-                            </div>
-                        </div>						
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">You are looking for</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
-                    </form>
-
-                </div>
-            </div>
-
-        </div>
-    </div>-->
 {% endblock %}
-

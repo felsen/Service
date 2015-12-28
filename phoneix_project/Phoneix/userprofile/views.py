@@ -67,3 +67,18 @@ class ContactPageView(TemplateView):
 class HospitalPageView(TemplateView):
 
     template_name = 'hospital.html'
+
+class AboutUsPageview(TemplateView):
+
+    template_name = 'about_us.html'
+
+class TermsServicePageview(TemplateView):
+
+    template_name = 'tof.html'
+
+class BlogPageview(TemplateView):
+
+    template_name = 'blog.html'
+
+
+
